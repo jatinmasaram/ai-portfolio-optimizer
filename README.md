@@ -1,85 +1,56 @@
-AI-Powered Portfolio Optimizer
-Overview
-This project is a web application built with Streamlit that allows users to analyze and optimize a portfolio of stocks using historical market data fetched via Yahoo Finance. It calculates daily returns, simulates multiple portfolios, and provides risk metrics such as Value at Risk (VaR). The results are visualized interactively to aid in investment decisions.
+# AI-Powered Portfolio Optimizer
 
-Features
-Select multiple stock tickers from a predefined list.
+This project is a Streamlit-based web app that helps you analyze and optimize a stock portfolio using historical data. It simulates thousands of random portfolios to find the best risk-return trade-off and visualizes them in an interactive chart. You can also see the Value at Risk (VaR) for your selected stocks.
 
-Choose a custom date range for historical price data.
+## Features
 
-Fetch adjusted closing prices from Yahoo Finance.
+- Select multiple stocks from a preset list
+- Set custom start and end dates for analysis
+- Fetch and process historical stock data using yFinance
+- Calculate daily returns and simulate portfolio combinations
+- Visualize returns vs. volatility with Sharpe ratio coloring
+- Estimate Value at Risk (95% confidence level)
 
-Calculate daily returns and simulate portfolios to find optimal risk-return combinations.
+## Tech Stack
 
-Calculate Value at Risk (VaR) at 95% confidence level.
+- **Frontend:** Streamlit
+- **Backend/Data:** Python, Pandas, yFinance
+- **Visualization:** Plotly
 
-Interactive visualization of portfolio volatility, returns, and Sharpe ratios.
+## Getting Started
 
-User-friendly interface with real-time updates.
-
-Installation
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/your-username/ai-portfolio-optimizer.git
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/ai-portfolio-optimizer.git
 cd ai-portfolio-optimizer
-Create and activate a Python virtual environment:
 
-bash
-Copy
-Edit
+2. Set up the virtual environment
+
 python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
-Install required dependencies:
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-bash
-Copy
-Edit
+3. Install the dependencies
+
 pip install -r requirements.txt
-Usage
-Run the Streamlit app:
 
-bash
-Copy
-Edit
+4. Run the app
+
 streamlit run app.py
-Select stocks from the multiselect dropdown.
 
-Pick start and end dates for the historical data.
+Folder Structure
 
-Click Run Analysis to fetch data, run portfolio simulations, and display the results.
+ai-portfolio-optimizer/
+├── app.py                # Main Streamlit app
+├── data_fetcher.py       # Functions to fetch stock data
+├── optimizer.py          # Portfolio simulation logic
+├── risk_analysis.py      # VaR calculation
+├── requirements.txt
+├── .gitignore
 
-The scatter plot visualizes simulated portfolios with volatility (x-axis), expected return (y-axis), and Sharpe ratio (color).
+Deployment
 
-The Value at Risk (VaR) is shown below the plot.
+You can deploy this app on platforms like Render, Streamlit Cloud, or Heroku. Just make sure to remove the venv folder and add it to .gitignore.
 
-How to Verify Results
-Compare fetched historical data against financial websites (Yahoo Finance, Google Finance) to ensure price data correctness.
+Disclaimer
 
-Check that the daily returns make sense (small daily percentage changes, no missing data).
-
-Portfolio simulations should show a range of return-volatility tradeoffs.
-
-VaR should be a negative percentage representing potential maximum loss at 95% confidence.
-
-You can test with well-known tickers (e.g., AAPL, MSFT) over standard periods and validate outputs.
-
-Future Improvements
-Add more stocks and dynamic ticker input.
-
-Enhance risk metrics (CVaR, drawdown).
-
-Add portfolio rebalancing simulation.
-
-Integrate machine learning for predictive portfolio optimization.
-
-Enable export of reports and portfolio recommendations.
-
-Contact
-For questions or contributions, please contact [Jatin Masaram] at [mjatin10117@gmail.com].
-
+This app is for educational and demonstration purposes only. It should not be used for actual financial or investment decisions.

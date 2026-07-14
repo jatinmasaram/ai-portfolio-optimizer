@@ -7,4 +7,6 @@ def test_var_calculation():
     })
     var = calculate_var(df)
     assert isinstance(var, float)
-    assert var > 0
+    # VaR is expected to be negative or zero (loss), so check <= 0
+    assert var <= 0
+
